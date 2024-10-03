@@ -117,20 +117,6 @@ GROUP BY
 ![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_5.png)
 
 ```
-SELECT 
-    p.Product,
-    SUM(f.Sales) AS Actual_Sales,
-    SUM(f.Budget_Sales) AS Budgeted_Sales,
-    SUM(f.Profit) AS Actual_Profit,
-    SUM(f.Budget_Profit) AS Budgeted_Profit,
-    (SUM(f.Sales) - SUM(f.Budget_Sales)) AS Sales_Variance,
-    (SUM(f.Profit) - SUM(f.Budget_Profit)) AS Profit_Variance
-FROM Fact f
-JOIN Product p ON f.ProductId = p.ProductId
-GROUP BY p.Product
-```
---![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_5.png)
-```
 CREATE VIEW Budget_Analysis AS
 SELECT 
     p.Product,
