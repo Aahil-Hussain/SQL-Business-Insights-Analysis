@@ -112,16 +112,98 @@ GROUP BY
 ![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_4.png)
 
 ```
+SELECT 
+    p.Product,
+    SUM(f.Sales) AS Actual_Sales,
+    SUM(f.Budget_Sales) AS Budgeted_Sales,
+    SUM(f.Profit) AS Actual_Profit,
+    SUM(f.Budget_Profit) AS Budgeted_Profit,
+    (SUM(f.Sales) - SUM(f.Budget_Sales)) AS Sales_Variance,
+    (SUM(f.Profit) - SUM(f.Budget_Profit)) AS Profit_Variance
+FROM Fact f
+JOIN Product p ON f.ProductId = p.ProductId
+GROUP BY p.Product
 ```
 ```
+CREATE VIEW Budget_Analysis AS
+SELECT 
+    p.Product,
+    SUM(f.Sales) AS Actual_Sales,
+    SUM(f.Budget_Sales) AS Budgeted_Sales,
+    SUM(f.Sales) - SUM(f.Budget_Sales) AS Sales_Variance,
+    SUM(f.COGS) AS Actual_COGS,
+    SUM(f.Budget_COGS) AS Budgeted_COGS,
+    SUM(f.COGS) - SUM(f.Budget_COGS) AS COGS_Variance,
+	CASE 
+        WHEN SUM(f.Sales) < SUM(f.Budget_Sales) THEN 'Underperforming'
+        ELSE 'On Target'
+    END AS Sales_Performance
+FROM Fact f
+JOIN Product p ON f.ProductId = p.ProductId
+GROUP BY p.Product
+
+select * from Budget_Analysis
 ```
 ```
+-- Identify Products with Profit Below Budgeted Profit using a CTE.
+WITH ProfitComparison AS (
+    SELECT 
+        f.ProductId, 
+        SUM(f.Profit) AS Actual_Profit, 
+        SUM(f.Budget_Profit) AS Budget_Profit
+    FROM Fact f
+    GROUP BY f.ProductId
+)
+SELECT 
+    p.Product, 
+    pc.Actual_Profit, 
+    pc.Budget_Profit
+FROM ProfitComparison pc
+JOIN Product p ON pc.ProductId = p.ProductId
+WHERE pc.Actual_Profit < pc.Budget_Profit
 ```
 ```
+--Average Margin by Product Type
+SELECT 
+    p.Product_Type,
+    AVG(f.Margin) AS Average_Margin
+FROM 
+    fact f
+JOIN 
+    product p ON f.ProductId = p.ProductId
+GROUP BY 
+    p.Product_Type
 ```
 ```
+-- Top 3 Markets by Sales for Each Product Type (Nested Query)
+SELECT Product_Type, Market, Sales
+FROM (
+	SELECT 
+		p.Product_Type, 
+		l.Market, 
+		SUM(f.Sales) AS Sales, 
+		ROW_NUMBER() OVER (PARTITION BY p.Product_Type ORDER BY SUM(f.Sales) DESC) AS RowNum
+	FROM Fact f
+	JOIN Product p ON f.ProductId = p.ProductId
+	JOIN Location l ON f.Area_Code = l.Area_Code
+	GROUP BY p.Product_Type, l.Market
+) AS RankedSales
+WHERE RowNum <= 3
 ```
 ```
+-- Identify Top Performing Markets 
+WITH Market_Performance AS (
+    SELECT 
+        l.Market,
+        SUM(f.Sales) AS Total_Sales,
+        SUM(f.Profit) AS Total_Profit,
+        RANK() OVER (ORDER BY SUM(f.Sales) DESC) AS Sales_Rank
+    FROM Fact f
+    JOIN Location l ON f.Area_Code = l.Area_Code
+    GROUP BY l.Market
+)
+SELECT * FROM Market_Performance
+WHERE Sales_Rank <=4 
 ```
 ```
 ```
