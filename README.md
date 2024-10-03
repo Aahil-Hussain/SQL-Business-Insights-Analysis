@@ -65,6 +65,9 @@ JOIN
     location l ON f.Area_Code = l.Area_Code
 GROUP BY 
     l.State
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/png%20files/ERD_Diagram.png)
+
+
 
 * Top Performing Products: Using window functions, the project identified the top 10 products based on total sales value. These products contributed to over 30% of the company’s revenue.
 
