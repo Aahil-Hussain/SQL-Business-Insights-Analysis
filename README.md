@@ -54,7 +54,8 @@ Please refer to the attached screenshots of the execution plan charts before and
 # Query Insights:
 Here are some key insights extracted from the data:
 
-```--Total Sales and Profit by State:
+```
+--Total Sales and Profit by State:
 SELECT top 10
     l.State,
     SUM(f.Sales) AS Total_Sales,
@@ -64,7 +65,8 @@ FROM
 JOIN 
     location l ON f.Area_Code = l.Area_Code
 GROUP BY 
-    l.State```
+    l.State
+```
 ![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_1.png)
 
 
