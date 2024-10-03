@@ -69,7 +69,61 @@ GROUP BY
 ```
 ![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_1.png)
 
+```
+--Market-wise Performance Analysis
+SELECT 
+    l.Market,
+    SUM(f.Sales) AS Total_Sales,
+    SUM(f.Profit) AS Total_Profit
+FROM Fact f
+JOIN Location l ON f.Area_Code = l.Area_Code
+GROUP BY l.Market
+```
 
+```
+-- Sales by Product Type and Market
+SELECT 
+    p.Product_Type, 
+    l.Market, 
+    SUM(f.Sales) AS Total_Sales
+FROM Fact f
+JOIN Product p ON f.ProductId = p.ProductId
+JOIN Location l ON f.Area_Code = l.Area_Code
+GROUP BY p.Product_Type, l.Market
+ORDER BY Total_Sales DESC
+```
+
+```
+-- Budget vs Actual Profit Analysis:
+SELECT 
+    l.State,
+    SUM(f.Profit) AS Actual_Profit,
+    SUM(f.Budget_Profit) AS Budget_Profit,
+    (SUM(f.Profit) - SUM(f.Budget_Profit)) AS Profit_Variance
+FROM 
+    fact f
+JOIN 
+    location l ON f.Area_Code = l.Area_Code
+GROUP BY 
+    l.State
+```
+
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
 
 * Top Performing Products: Using window functions, the project identified the top 10 products based on total sales value. These products contributed to over 30% of the company’s revenue.
 
