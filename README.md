@@ -201,11 +201,13 @@ order by 2 desc
 ![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_10.png)
 
 
-* Top Performing Products: Using window functions, the project identified the top 10 products based on total sales value. These products contributed to over 30% of the company’s revenue.
+* Top Performing Region: Using SUM() functions, the query identified the top 10  states based on theri total sales value. 
 
 * Geographical Trends: Analysis of the sales performance across different markets revealed that the West and Central region had the highest sales, with a significant growth trend compared to the previous quarters.
 
 * Budget vs. Actuals: A comparison of budgeted sales vs. actual sales was performed using dynamic queries. This helped in identifying underperforming regions and adjusting the budget allocation for the next quarter.
+
+* Performance: The query uses a CASE statement to identify underperforming products, providing stakeholders with insights that can help improve future sales strategies.
 
 
 
