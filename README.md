@@ -129,6 +129,7 @@ FROM Fact f
 JOIN Product p ON f.ProductId = p.ProductId
 GROUP BY p.Product
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_5.png)
 ```
 CREATE VIEW Budget_Analysis AS
 SELECT 
@@ -149,6 +150,7 @@ GROUP BY p.Product
 
 select * from Budget_Analysis
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_6.png)
 ```
 -- Identify Products with Profit Below Budgeted Profit using a CTE.
 WITH ProfitComparison AS (
@@ -167,6 +169,7 @@ FROM ProfitComparison pc
 JOIN Product p ON pc.ProductId = p.ProductId
 WHERE pc.Actual_Profit < pc.Budget_Profit
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_7.png)
 ```
 --Average Margin by Product Type
 SELECT 
@@ -179,6 +182,7 @@ JOIN
 GROUP BY 
     p.Product_Type
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_8.png)
 ```
 -- Top 3 Markets by Sales for Each Product Type (Nested Query)
 SELECT Product_Type, Market, Sales
@@ -195,6 +199,7 @@ FROM (
 ) AS RankedSales
 WHERE RowNum <= 3
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_9.png)
 ```
 -- Inventory and Sales by Product
 SELECT 
@@ -206,6 +211,7 @@ JOIN Product p ON f.ProductId = p.ProductId
 GROUP BY p.Product
 order by 2 desc
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_10.png)
 
 
 * Top Performing Products: Using window functions, the project identified the top 10 products based on total sales value. These products contributed to over 30% of the company’s revenue.
