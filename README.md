@@ -37,18 +37,19 @@ Subqueries were extensively used for filtering data, calculating aggregates, and
 - Dynamic SQL and Stored Procedures: 
 Dynamic stored procedures were implemented to allow flexibility in query execution by enabling users to pass parameters for dynamic report generation (e.g., by date range, product category, or region).
 
-# Performance Comparison: Before and After Indexing
+## Database Optimization
 
-![Sales Performance](https://github.com/username/repository/blob/main/images/sales_performance.png)
+To enhance the performance of my SQL queries, I implemented various indexing strategies and key structures in the database.
 
-Conclusion
-The addition of indexing significantly improved query performance, particularly in the parsing and compilation phase. Although the execution time remained comparable, the notable decrease in parse time demonstrates the effectiveness of indexing.
+- **Non-Clustered Index:** Additionally, I implemented a non-clustered index on the `Sales` column, allowing for quicker searches and aggregations without affecting the physical order of the data.
+
+- **Composite Key:** I also created a composite key in the `Fact` table using the `Date`, `ProductId`, and `Area_Code` columns. This composite key ensures data integrity and improves the performance of queries that filter or join on these columns by providing a unique identifier for each record.
+
+These optimizations led to a noticeable reduction in query execution times and improved overall efficiency of the database operations.
+Although the execution time remained comparable, the notable decrease in parse time demonstrates the effectiveness of indexing.
 
 Implications for Larger Datasets
 As the dataset size increases (e.g., to millions of rows), the benefits of indexing will become even more pronounced. Indexing can reduce data retrieval times by minimizing the number of rows scanned, leading to faster query execution and improved overall performance.
-
-Visual Evidence
-Please refer to the attached screenshots of the execution plan charts before and after indexing to visualize the performance improvements.
 
 
 # Query Insights:
