@@ -64,7 +64,7 @@ FROM
 JOIN 
     location l ON f.Area_Code = l.Area_Code
 GROUP BY 
-    l.State
+    l.State```
 ![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_1.png)
 
 
