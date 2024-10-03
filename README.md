@@ -65,7 +65,7 @@ JOIN
     location l ON f.Area_Code = l.Area_Code
 GROUP BY 
     l.State
-![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/png%20files/sql%20pic%201.png)
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/png%20files/ERD_Diagram.png)
 
 
 
