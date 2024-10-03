@@ -79,6 +79,7 @@ FROM Fact f
 JOIN Location l ON f.Area_Code = l.Area_Code
 GROUP BY l.Market
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_2.png)
 
 ```
 -- Sales by Product Type and Market
@@ -92,6 +93,7 @@ JOIN Location l ON f.Area_Code = l.Area_Code
 GROUP BY p.Product_Type, l.Market
 ORDER BY Total_Sales DESC
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_3.png)
 
 ```
 -- Budget vs Actual Profit Analysis:
@@ -107,6 +109,7 @@ JOIN
 GROUP BY 
     l.State
 ```
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_4.png)
 
 ```
 ```
