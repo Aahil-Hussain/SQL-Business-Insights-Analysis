@@ -114,7 +114,7 @@ JOIN
 GROUP BY 
     l.State
 ```
-![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_4.png)
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_5.png)
 
 ```
 SELECT 
@@ -129,7 +129,7 @@ FROM Fact f
 JOIN Product p ON f.ProductId = p.ProductId
 GROUP BY p.Product
 ```
-![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_5.png)
+--![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/sql_pic_5.png)
 ```
 CREATE VIEW Budget_Analysis AS
 SELECT 
