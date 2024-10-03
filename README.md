@@ -41,9 +41,9 @@ Dynamic stored procedures were implemented to allow flexibility in query executi
 
 To enhance the performance of my SQL queries, I implemented various indexing strategies and key structures in the database.
 
-- **Non-Clustered Index:** Additionally, I implemented a non-clustered index on the `Sales` column, allowing for quicker searches and aggregations without affecting the physical order of the data.
-
 - **Composite Key:** I also created a composite key in the `Fact` table using the `Date`, `ProductId`, and `Area_Code` columns. This composite key ensures data integrity and improves the performance of queries that filter or join on these columns by providing a unique identifier for each record.
+
+- **Non-Clustered Index:** Additionally, I implemented a non-clustered index on the `Date`, `ProductId`, and `Area_Code` columns allowing for quicker searches and aggregations without affecting the physical order of the data.
 
 These optimizations led to a noticeable reduction in query execution times and improved overall efficiency of the database operations.
 Although the execution time remained comparable, the notable decrease in parse time demonstrates the effectiveness of indexing.
