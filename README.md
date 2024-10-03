@@ -10,6 +10,8 @@ Dimension Tables: Product, Location
 
 Columns: ORDERNUMBER, QUANTITYORDERED, PRICEEACH, ORDERDATE, STATUS, PRODUCTLINE, CUSTOMERNAME, COUNTRY, etc.
 
+![Sales Performance](https://github.com/Aahil-Hussain/Sales-Profit-Analysis/blob/main/png%20files/ERD_Diagram.png)
+
 # Objective: 
 Provide key insights into sales performance, product trends, customer behavior, and forecast accuracy using advanced SQL techniques.
 
