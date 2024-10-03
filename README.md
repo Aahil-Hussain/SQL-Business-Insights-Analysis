@@ -54,7 +54,7 @@ Please refer to the attached screenshots of the execution plan charts before and
 # Query Insights:
 Here are some key insights extracted from the data:
 
-'''--Total Sales and Profit by State:
+```--Total Sales and Profit by State:
 SELECT top 10
     l.State,
     SUM(f.Sales) AS Total_Sales,
@@ -64,7 +64,7 @@ FROM
 JOIN 
     location l ON f.Area_Code = l.Area_Code
 GROUP BY 
-    l.State'''
+    l.State
 
 * Top Performing Products: Using window functions, the project identified the top 10 products based on total sales value. These products contributed to over 30% of the company’s revenue.
 
