@@ -17,10 +17,10 @@ Provide key insights into sales performance, product trends, customer behavior, 
 # SQL Techniques Used
 This project leverages a variety of SQL features, including:
 
-## Window Functions: 
+- Window Functions: 
 Used to perform calculations across specific rows related to the current row. Functions such as RANK, ROW_NUMBER, and SUM() with OVER(), JOINS,  PARTITION BY,  VIEWs, CASE STATEMENT,  are utilized to analyze trends, rank products, and compare sequential sales periods.
 
-## Common Table Expressions (CTEs): 
+- Common Table Expressions (CTEs): 
 CTEs were used for better query readability and efficiency, especially in recursive and complex queries that required breaking down into smaller parts.
 
 ## Views: 
