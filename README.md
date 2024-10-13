@@ -1,4 +1,4 @@
-# SQL Business Insights Analysis
+# SQL Business Insights Analysis 
 
 # OVERVIEW
 This project involves analyzing a sales dataset containing various attributes such as order details, customer information, product data, and geographical insights. The objective of the project is to extract valuable business insights by running advanced SQL queries to help stakeholders make data-driven decisions. The business problem revolves around identifying trends, analyzing product performance, and comparing budgeted vs. actual results across different dimensions such as time, geography, and product lines.
